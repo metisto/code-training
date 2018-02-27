@@ -23,6 +23,8 @@ public class Customer {
     public String statement() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
+
+        // add header lines
         String result = "Rental Record for " + getName() + "\n";
 
         for (Rental each : _rentals) {
@@ -53,6 +55,8 @@ public class Customer {
 
             // show figures for this rental
             result += "\t" + each.getMovie().getTitle() + "\t" + String.valueOf(thisAmount) + "\n";
+
+            // compute total amount
             totalAmount += thisAmount;
         }
 
